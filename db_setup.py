@@ -1,24 +1,30 @@
 import psycopg2
 import os
 from psycopg2 import sql
-
-# --- ডাটাবেস ইউআরএল এনভায়রনমেন্ট ভ্যারিয়েবল থেকে নেওয়া হবে ---
 import psycopg2
 import os
 from psycopg2 import sql
 
 # DB URL কে সরাসরি এনভায়রনমেন্ট ভ্যারিয়েবল থেকে নেওয়া হবে
+# কোডের এই অংশে হার্ডকোডেড বা ডিফল্ট কোনো URL রাখবেন না
 DATABASE_URL = os.environ.get('DATABASE_URL') 
-# হার্ডকোডেড বা ডিফল্ট কোনো URL রাখবেন না
-# ...
 
+# এই অংশটি সংযোগ ব্যর্থতা হ্যান্ডেল করবে
+if not DATABASE_URL:
+    print("❌ ERROR: DATABASE_URL environment variable is not set. Check Render settings.")
+    # আমরা এই ক্ষেত্রে কোড ফেইল না করিয়ে শুধুমাত্র একটি মেসেজ দেখাচ্ছি।
 
-# --- আপনার Neon DB URL টি এখানে দিন ---
-# গুরুত্বপূর্ণ: এটি আপনার আসল Neon DB URL দিয়ে পরিবর্তন করুন।
-# হোস্টিংয়ে এনভায়রনমেন্ট ভ্যারিয়েবল ব্যবহার করাই শ্রেয়।
-DATABASE_URL = "postgresql://YourOwner:YourPassword@YourHost/YourDB?sslmode=require" 
-# উদাহরণ: "postgresql://neondb_owner:npg_eJhncBGf8QF3@ep-dry-base-ado832ge-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
-
+def setup_database():
+    conn = None
+    try:
+        # DB URL না থাকলে সংযোগ প্রচেষ্টা ব্যর্থ হবে, যা আমরা চাই।
+        if not DATABASE_URL:
+             raise Exception("DATABASE_URL environment variable is not set.")
+             
+        conn = psycopg2.connect(DATABASE_URL)
+        cur = conn.cursor()
+        
+        # ... বাকি টেবিল তৈরির কোড ...
 
 # হোস্টিংয়ে Environment Variable থেকে URL নেওয়ার জন্য
 if 'DATABASE_URL' in os.environ:
