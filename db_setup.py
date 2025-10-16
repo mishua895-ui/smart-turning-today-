@@ -3,23 +3,15 @@ import os
 from psycopg2 import sql
 
 # --- ডাটাবেস ইউআরএল এনভায়রনমেন্ট ভ্যারিয়েবল থেকে নেওয়া হবে ---
-# যদি DATABASE_URL এনভায়রনমেন্ট ভ্যারিয়েবল না থাকে, তবে কানেকশন ফেইল করবে।
-DATABASE_URL = os.environ.get('DATABASE_URL')
-
-# ... কোডের বাকি অংশ অপরিবর্তিত ...
-
-def setup_database():
-    conn = None
-    try:
-        # DB URL না থাকলে ত্রুটি দেখাবে
-        if not DATABASE_URL:
-            raise Exception("DATABASE_URL environment variable is not set.")
-        
-        # ডাটাবেসের সাথে সংযোগ স্থাপন
-        conn = psycopg2.connect(DATABASE_URL)
-        # ... কোডের বাকি অংশ ... psycopg2
+import psycopg2
 import os
 from psycopg2 import sql
+
+# DB URL কে সরাসরি এনভায়রনমেন্ট ভ্যারিয়েবল থেকে নেওয়া হবে
+DATABASE_URL = os.environ.get('DATABASE_URL') 
+# হার্ডকোডেড বা ডিফল্ট কোনো URL রাখবেন না
+# ...
+
 
 # --- আপনার Neon DB URL টি এখানে দিন ---
 # গুরুত্বপূর্ণ: এটি আপনার আসল Neon DB URL দিয়ে পরিবর্তন করুন।
