@@ -1,4 +1,5 @@
-import telebot
+# BOT_TOKEN = "YOUR_BOT_TOKEN_HERE" <--- এই লাইনটি মুছে ফেলুন
+BOT_TOKEN = os.environ.get('BOT_TOKEN') # <--- এটি ব্যবহার করুন telebot
 import psycopg2
 import os
 from datetime import datetime, timedelta
