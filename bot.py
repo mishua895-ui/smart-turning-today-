@@ -1,4 +1,6 @@
-# BOT_TOKEN = "YOUR_BOT_TOKEN_HERE" <--- এই লাইনটি মুছে ফেলুন
+# আপনার Telegram Bot Token এনভায়রনমেন্ট ভ্যারিয়েবল থেকে নেওয়া হবে
+# BOT_TOKEN = "YOUR_ACTUAL_BOT_TOKEN_HERE" # <--- এই লাইনটি DELETE করুন
+BOT_TOKEN = os.environ.get('BOT_TOKEN') # <--- এই লাইনটি নিশ্চিত করুন# BOT_TOKEN = "YOUR_BOT_TOKEN_HERE" <--- এই লাইনটি মুছে ফেলুন
 BOT_TOKEN = os.environ.get('BOT_TOKEN') # <--- এটি ব্যবহার করুন telebot
 import psycopg2
 import os
