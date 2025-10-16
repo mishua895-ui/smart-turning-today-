@@ -11,10 +11,7 @@ from psycopg2 import sql
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
-DATABASE_URL = os.environ.get('DATABASE_URL')
-# লাইন 19:
-DATABASE_URL = os.environ.get('DATABASE_URL') # শুধু এইটুকু রাখুন
-
+# টাস্ক কনফিগারেশন
 TASK_REWARD = 5.00  # প্রতি টাস্কে ৫.০০ টাকা
 DAILY_TASK_LIMIT = 5 # প্রতিদিন ৫টি টাস্কের বেশি করা যাবে না
 REFERRAL_BONUS = 10.00 # প্রতি রেফারেলের জন্য ১০.০০ টাকা
@@ -24,9 +21,6 @@ ADMIN_ID = 8145444675 # আপনার টেলিগ্রাম ইউজা
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
-# --- ডাটাবেস ফাংশন ---
-
-def get_db_connection():
     """ডাটাবেসের সাথে সংযোগ স্থাপন করে"""
     try:
         conn = psycopg2.connect(DATABASE_URL)
