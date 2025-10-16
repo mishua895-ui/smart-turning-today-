@@ -8,12 +8,12 @@ import os
 from datetime import datetime, timedelta
 import pytz
 from psycopg2 import sql
-
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
 # --- কনফিগারেশন ---
 # আপনার Telegram Bot Token দিন
 # লাইন 15-16:
 BOT_TOKEN = os.environ.get('BOT_TOKEN') # শুধু এইটুকু রাখুন
-
+DATABASE_URL = os.environ.get('DATABASE_URL')
 # লাইন 19:
 DATABASE_URL = os.environ.get('DATABASE_URL') # শুধু এইটুকু রাখুন
 
