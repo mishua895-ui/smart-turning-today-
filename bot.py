@@ -11,12 +11,13 @@ from psycopg2 import sql
 
 # --- কনফিগারেশন ---
 # আপনার Telegram Bot Token দিন
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE" 
-
+BOT_TOKEN = os . environ. get('BOT_TOKEN', 'YOUR_BOT_TOKEN_HERE')
 # আপনার Neon DB URL দিন (এনভায়রনমেন্ট ভ্যারিয়েবল হিসেবে হোস্টিংয়ে সেট করা হবে)
 DATABASE_URL = os.environ.getDATABASE_URL =
 Os.environ.get('DATABAS E_URL')
-# টাস্ক কনফিগারেশন
+DATABASE_URL
+os.environ. get('DATABASE_URL', postgresql://YourOwner:
+YourPas sword@YourHost /YourDB?ss lmode require')
 TASK_REWARD = 5.00  # প্রতি টাস্কে ৫.০০ টাকা
 DAILY_TASK_LIMIT = 5 # প্রতিদিন ৫টি টাস্কের বেশি করা যাবে না
 REFERRAL_BONUS = 10.00 # প্রতি রেফারেলের জন্য ১০.০০ টাকা
