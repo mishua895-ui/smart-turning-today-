@@ -1,18 +1,16 @@
-# আপনার Telegram Bot Token এনভায়রনমেন্ট ভ্যারিয়েবল থেকে নেওয়া হবে
-# BOT_TOKEN = "YOUR_ACTUAL_BOT_TOKEN_HERE" # <--- এই লাইনটি DELETE করুন
-BOT_TOKEN = os.environ.get('BOT_TOKEN') # <--- এই লাইনটি নিশ্চিত করুন# BOT_TOKEN =
-os.environ.get('BOT TOK EN') <--- এই লাইনটি মুছে ফেলুন
-BOT_TOKEN = os.environ.get('BOT_TOKEN') # <--- এটি ব্যবহার করুন telebot
+import telebot
 import psycopg2
 import os
 from datetime import datetime, timedelta
 import pytz
 from psycopg2 import sql
-BOT_TOKEN = os.environ.get('BOT_TOKEN')
+
 # --- কনফিগারেশন ---
-# আপনার Telegram Bot Token দিন
-# লাইন 15-16:
-BOT_TOKEN = os.environ.get('BOT_TOKEN') # শুধু এইটুকু রাখুন
+# টোকেন ও ডাটাবেস ইউআরএল এনভায়রনমেন্ট ভ্যারিয়েবল থেকে নেওয়া হবে
+# Render-এ এগুলো অবশ্যই সেট করা থাকতে হবে।
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
+DATABASE_URL = os.environ.get('DATABASE_URL')
+
 DATABASE_URL = os.environ.get('DATABASE_URL')
 # লাইন 19:
 DATABASE_URL = os.environ.get('DATABASE_URL') # শুধু এইটুকু রাখুন
