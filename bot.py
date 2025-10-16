@@ -13,8 +13,8 @@ from psycopg2 import sql
 BOT_TOKEN = "YOUR_BOT_TOKEN_HERE" 
 
 # আপনার Neon DB URL দিন (এনভায়রনমেন্ট ভ্যারিয়েবল হিসেবে হোস্টিংয়ে সেট করা হবে)
-DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://YourOwner:YourPassword@YourHost/YourDB?sslmode=require')
-
+DATABASE_URL = os.environ.getDATABASE_URL =
+Os.environ.get('DATABAS E_URL')
 # টাস্ক কনফিগারেশন
 TASK_REWARD = 5.00  # প্রতি টাস্কে ৫.০০ টাকা
 DAILY_TASK_LIMIT = 5 # প্রতিদিন ৫টি টাস্কের বেশি করা যাবে না
